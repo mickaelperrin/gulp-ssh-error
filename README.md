@@ -10,10 +10,13 @@
 4. Add a test-settings.js file in the gulp/ssh folder with the settings to connect to your test server. For example:
 
 ```javascript
-module.exports = {
+module.exports = function(gulp) {
+ return { 
     host: 'server_name',
     username: 'user_name',
-    agent: process.env.SSH_AUTH_SOCK
+    agent: process.env.SSH_AUTH_SOCK,
+    gulp: gulp
+ }
 };
 ```
 

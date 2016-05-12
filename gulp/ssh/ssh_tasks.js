@@ -8,7 +8,7 @@ module.exports = function (gulp) {
     {
 
         try {
-            var config = require('./test-settings')
+            var config = require('./test-settings')(gulp)
         } catch (e) {
             console.log(e);
             process.exit();
