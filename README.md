@@ -1,6 +1,7 @@
 # gulp-ssh problem
 
 >  gulp -ssh does not seem to call callback when called in another folder
+> **Now Fixed with release 0.5.6**
 
 ## Installation
 
@@ -10,12 +11,10 @@
 4. Add a test-settings.js file in the gulp/ssh folder with the settings to connect to your test server. For example:
 
 ```javascript
-module.exports = function(gulp) {
- return { 
+module.exports =  {
     host: 'server_name',
     username: 'user_name',
-    agent: process.env.SSH_AUTH_SOCK,
-    gulp: gulp
+    agent: process.env.SSH_AUTH_SOCK
  }
 };
 ```

@@ -8,7 +8,7 @@ module.exports = function (gulp) {
     {
 
         try {
-            var config = require('./test-settings')(gulp)
+            var config = require('./test-settings')
         } catch (e) {
             console.log(e);
             process.exit();
@@ -16,7 +16,8 @@ module.exports = function (gulp) {
 
         var ssh = new GulpSSH({
             ignoreErrors: false,
-            sshConfig: config
+            sshConfig: config,
+            gulp: gulp
         });
 
         return ssh.exec('echo ok').on('ssh2Data', function(chunck) {
