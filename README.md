@@ -15,7 +15,6 @@ module.exports =  {
     host: 'server_name',
     username: 'user_name',
     agent: process.env.SSH_AUTH_SOCK
- }
 };
 ```
 
